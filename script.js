@@ -9,7 +9,7 @@ const lines = [
   'Loading...',
   '',
   'Eduardo Candido Gonçalves',
-  'I am a Platform Engineering Tech Lead at @Metadados',
+  'Platform Engineering Tech Lead at @Metadados',
   '',
   'Follow me: linked.in/eduardocandido | github.com/ecandido ',
   ''
