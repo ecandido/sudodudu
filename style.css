@@ -20,6 +20,37 @@ body {
   font-size: 1.20rem; 
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: auto;
+  max-width: 98vw;
+  max-height: 90vh;
+}
+
+@media (max-width: 600px) {
+  .terminal {
+    width: 98vw;
+    min-width: 0;
+    height: auto;
+    min-height: 200px;
+    max-height: 80vh;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .terminal-header {
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+  .button {
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+}
+
+#terminal, .line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .terminal-header {

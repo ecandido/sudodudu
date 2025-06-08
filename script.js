@@ -8,7 +8,7 @@ const lines = [
   '',
   'Loading...',
   '',
-  'My name is Eduardo Candido Gonçalves',
+  'Eduardo Candido Gonçalves',
   'I am a Platform Engineering Tech Lead at @Metadados',
   '',
   'Follow me: linked.in/eduardocandido | github.com/ecandido ',
@@ -19,9 +19,14 @@ let currentLine = 0;
 let currentChar = 0;
 let cursor;
 
+function getPromptPrefix() {
+  return window.innerWidth <= 600
+    ? 'sudo@dudu-$: '
+    : 'guest@sudodudu:-/home$: ';
+}
+
 function typeLine() {
   if (currentLine >= lines.length) {
-    
     const lastLine = terminal.lastChild;
     if (!lastLine.querySelector('.blink')) {
       lastLine.appendChild(cursor);
@@ -34,7 +39,7 @@ function typeLine() {
     line.className = 'line';
     terminal.appendChild(line);
 
-    line.textContent = 'guest@sudodudu:-/home$: ';
+    line.textContent = getPromptPrefix();
 
     if (!cursor) {
       cursor = document.createElement('span');
@@ -44,7 +49,7 @@ function typeLine() {
   }
 
   const line = terminal.children[currentLine];
-  cursor.remove(); 
+  cursor.remove();
   line.textContent += lines[currentLine][currentChar] || '';
   line.appendChild(cursor);
   currentChar++;
